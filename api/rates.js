@@ -32,6 +32,11 @@ export default async function handler(req, res) {
             })
             console.log('soapRes: ', soapRes)
 
+            if (!soapRes.ok) return res.status(soapRes.status).json({error: soapRes.statusText})
+
+            const resXml = await soapRes.text()
+            console.log('resXml: ', resXml)    
+
             const rates= []
             return res.status(200).json({rates})
 
