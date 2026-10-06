@@ -10,7 +10,15 @@ export default class MnbCurrencyRates extends React.Component{
     }
 
     async componentDidMount() {
-        // TODO - call GET /api/rates HTTP REST API endpoint
+
+    
+
+        // call GET /api/rates HTTP REST API endpoint
+        const res = await fetch('/api/rates')
+        const json = await res.json()
+        console.log('MnbCurrencyRates json: ', json)
+
+
         // TODO - set state from request
     }
 
