@@ -30,7 +30,7 @@ export default async function handler(req, res) {
                 },
                 body: reqBodyXml
             })
-            console.log('soapRes: ', )
+            console.log('soapRes: ', soapRes)
 
             const rates= []
             return res.status(200).json({rates})
