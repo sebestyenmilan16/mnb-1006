@@ -32,7 +32,6 @@ export default class MnbCurrencyRates extends React.Component{
     csere = () => {
         let adat1 = document.getElementsByClassName("ebbol")[0].innerHTML;
         let adat2 = document.getElementsByClassName("ebbe")[0].innerHTML;
-        let adat3 = document.
         console.log(adat1, adat2);
         document.getElementsByClassName("ebbol").innerHTML = adat2;
         document.getElementsByClassName("ebbe").innerHTML = adat1;
