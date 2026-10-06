@@ -30,11 +30,11 @@ export default class MnbCurrencyRates extends React.Component{
     }
 
     csere = () => {
-        let adat1 = document.getElementsById("ebbol").innerHTML;
-        let adat2 = document.getElementsById("ebbe").innerHTML;
+        let adat1 = document.getElementsByClassName("ebbol").innerHTML;
+        let adat2 = document.getElementsByClassName("ebbe").innerHTML;
         console.log(adat1, adat2);
-        document.getElementsById("ebbol").innerHTML = adat2;
-        document.getElementsById("ebbe").innerHTML = adat1;
+        document.getElementsByClassName("ebbol").innerHTML = adat2;
+        document.getElementsByClassName("ebbe").innerHTML = adat1;
     }
 
     render() {
@@ -74,7 +74,7 @@ export default class MnbCurrencyRates extends React.Component{
                     <label>
                         Ebből
                         <select name="from" >
-                            {rates.map( (rate) => <option className="op" id="ebbol" key={rate.curr}>{rate.curr}</option> )}
+                            {rates.map( (rate) => <option id="op" className="ebbol" key={rate.curr}>{rate.curr}</option> )}
                         </select>
                     </label>
                     {/* TODO - button click */}
@@ -82,7 +82,7 @@ export default class MnbCurrencyRates extends React.Component{
                     <label>
                         Ebbe
                         <select name="to" >
-                            {rates.map( (rate) => <option className="op" id="ebbe" key={rate.curr}>{rate.curr}</option> )}
+                            {rates.map( (rate) => <option id="op" className="ebbe" key={rate.curr}>{rate.curr}</option> )}
                             </select>
                     </label>
                     <output className="mnb-result"></output>
