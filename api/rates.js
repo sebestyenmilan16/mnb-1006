@@ -1,3 +1,5 @@
+import {XMLParser} from 'fast-xml-parser';
+
 /** 
  * GET /rates
  * Endpoint for getting currency rates against HUF from MNB by SOAP
@@ -36,6 +38,11 @@ export default async function handler(req, res) {
 
             const resXml = await soapRes.text()
             console.log('resXml: ', resXml)    
+
+            const parsed = parseRates(resXml)
+            console.log('parsed: ', parsed)
+            
+            
 
             const rates= []
             return res.status(200).json({rates})
