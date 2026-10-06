@@ -77,7 +77,7 @@ export default class MnbCurrencyRates extends React.Component{
                         </select>
                     </label>
                     {/* TODO - button click */}
-                    <button type="button"  title="Felcserélés" onClick={csere()}>⇅</button>
+                    <button type="button"  title="Felcserélés" onClick={this.csere}>⇅</button>
                     <label>
                         Ebbe
                         <select name="to" >
