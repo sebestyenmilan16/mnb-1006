@@ -30,11 +30,10 @@ export default class MnbCurrencyRates extends React.Component{
     }
 
     csere = () => {
-        let adat1 = document.getElementsByClassName("ebbol")[this.props].innerHTML;
-        let adat2 = document.getElementsByClassName("ebbe")[this.props].innerHTML;
-        console.log(adat1, adat2);
-        document.getElementsByClassName("ebbol").innerHTML = adat2;
-        document.getElementsByClassName("ebbe").innerHTML = adat1;
+        this.setState({
+            from: this.state.to,
+            to: this.state.from
+        });
     }
 
     render() {
@@ -73,16 +72,24 @@ export default class MnbCurrencyRates extends React.Component{
                     </label>
                     <label>
                         Ebből
-                        <select name="from" >
-                            {rates.map( (rate) => <option id="op" className="ebbol" key={rate.curr}>{rate.curr}</option> )}
+                        <select
+                            name="from"
+                            value={this.state.from}
+                            onChange={(e) => this.setState({ from: e.target.value })}
+                        >
+                            {rates.map( (rate) => <option id="op" key={rate.curr} value={rate.curr}>{rate.curr}</option> )}
                         </select>
                     </label>
                     {/* TODO - button click */}
                     <button type="button"  title="Felcserélés" onClick={this.csere}>⇅</button>
                     <label>
                         Ebbe
-                        <select name="to" >
-                            {rates.map( (rate) => <option id="op" className="ebbe" key={rate.curr}>{rate.curr}</option> )}
+                        <select
+                            name="to"
+                            value={this.state.to}
+                            onChange={(e) => this.setState({ to: e.target.value })}
+                        >
+                            {rates.map( (rate) => <option id="op" key={rate.curr} value={rate.curr}>{rate.curr}</option> )}
                             </select>
                     </label>
                     <output className="mnb-result"></output>
