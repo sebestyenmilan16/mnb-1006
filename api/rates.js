@@ -28,7 +28,7 @@ function parseRates(resXml) {
 }
 
 /** 
- * GET /rates
+ * GET /api/rates
  * Endpoint for getting currency rates against HUF from MNB by SOAP
 @param {Request} req
 @param {Response} res

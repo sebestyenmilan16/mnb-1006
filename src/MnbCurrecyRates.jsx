@@ -9,6 +9,11 @@ export default class MnbCurrencyRates extends React.Component{
         error: null,
     }
 
+    async componentDidMount() {
+        // TODO - call GET /api/rates HTTP REST API endpoint
+        // TODO - set state from request
+    }
+
     render() {
 
         const {date, rates, error} = this.state;
@@ -27,7 +32,7 @@ export default class MnbCurrencyRates extends React.Component{
                                 <th>Árfolyam (HUF)</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>TODO - Adatok</tbody>
                     </table>
                 </div>
 
@@ -39,12 +44,13 @@ export default class MnbCurrencyRates extends React.Component{
                     </label>
                     <label>
                         Ebből
-                        <select name="from" ></select>
+                        <select name="from" >TODO - fill options</select>
                     </label>
+                    {/* TODO - button click */}
                     <button type="button"  title="Felcserélés">⇅</button>
                     <label>
                         Ebbe
-                        <select name="to" ></select>
+                        <select name="to" >TODO - fill options</select>
                     </label>
                     <output className="mnb-result"></output>
                 </form>
