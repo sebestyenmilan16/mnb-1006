@@ -67,7 +67,7 @@ export default class MnbCurrencyRates extends React.Component{
                     </label>
                     <label>
                         Ebből
-                        <select name="from" >TODO - fill options
+                        <select name="from" >
                             {rates.map( (rate) => <option className="op" key={rate.curr}>{rate.curr}</option> )}
                         </select>
                     </label>
@@ -75,7 +75,9 @@ export default class MnbCurrencyRates extends React.Component{
                     <button type="button"  title="Felcserélés">⇅</button>
                     <label>
                         Ebbe
-                        <select name="to" >TODO - fill options</select>
+                        <select name="to" >
+                            {rates.map( (rate) => <option className="op" key={rate.curr}>{rate.curr}</option> )}
+                            </select>
                     </label>
                     <output className="mnb-result"></output>
                 </form>
