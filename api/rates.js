@@ -71,8 +71,8 @@ export default async function handler(req, res) {
 
             
 
-            const rates= []
-            return res.status(200).json({rates})
+            const {date = new Date(Date.now()), rates = []} = parsed
+            return res.status(200).json({date, rates})
 
         default:
             return res.status(405).json({error: "Method Not Allowed"})    
